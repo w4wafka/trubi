@@ -1,0 +1,102 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 10% 5%;
+  z-index: 5;
+  box-sizing: border-box;
+  margin-top: -20px;
+  overflow: hidden;
+  position: relative;
+  font-family: 'Raleway';
+  color: white;
+  -webkit-clip-path: polygon(50% 8%, 100% 0, 100% 100%, 0 100%, 0 0);
+  clip-path: polygon(50% 8%, 100% 0, 100% 100%, 0 100%, 0 0);
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 508px;
+    z-index: -100;
+    background: url('../img/bg1.png');
+    opacity: 0.8;
+    background-position: center;
+  }
+}
+
+.footer__adress {
+  display: inline-block;
+  text-align: center;
+  font-size: 24px;
+}
+
+.footer__list {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.footer__item {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.footer__link {
+  text-decoration: none;
+  position: relative;
+  color: white;
+  margin: 0 15px;
+  width: 192px;
+  font-size: 0;
+  height: 57px;
+  display: inline-block;
+}
+
+.footer__link--appstore::after {
+  content: '';
+  display: block;
+  width: 192px;
+  height: 57px;
+  background: url('../img/appstore.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+.footer__link--playmarket::after {
+  content: '';
+  display: block;
+  width: 192px;
+  height: 57px;
+  background: url('../img/google.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  position: absolute;
+}
+
+@media (min-width: 1024px) {
+  .footer {
+    padding: 50px;
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  .footer__list {
+    flex-direction: row;
+    justify-content: center;
+  }
+}

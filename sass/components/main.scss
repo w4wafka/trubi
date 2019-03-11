@@ -1,0 +1,282 @@
+.main {
+  overflow-x: hidden;
+  height: 100%;
+  padding: 0 5%;
+  box-sizing: border-box;
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: -70px;
+  padding-top: 70px;
+  padding-bottom: 50px;
+  position: relative;
+  &::before {
+    height: 100%;
+    width: 100%;
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    background: url('../img/bg.png');
+    opacity: 0.3;
+  }
+}
+
+.main__item {
+  padding: 2%;
+  margin-bottom: 30px;
+  z-index: 5;
+  &::before {
+    border-radius: 20px;
+  }
+}
+
+.main .main__item--fourth::after {
+  display: none;
+}
+
+.main__item--first {
+  position: relative;
+  box-sizing: border-box;
+  padding-right: 40px;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120%;
+    height: 100%;
+    left: -53px;
+    background: #9ff7fb;
+    z-index: -1;
+  }
+}
+
+.main__item--second {
+  position: relative;
+  box-sizing: border-box;
+  padding-left: 40px;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120%;
+    height: 100%;
+    left: -3px;
+    background: #9ffbde;
+    z-index: -1;
+  }
+}
+
+.main__item--third {
+  position: relative;
+  box-sizing: border-box;
+  padding-right: 40px;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120%;
+    height: 100%;
+    left: -53px;
+    background: #8ed9dc;
+    z-index: -1;
+  }
+}
+
+.main__item--fourth {
+  margin: 20px auto 0;
+  position: relative;
+  width: 170px;
+  height: 50px;
+  display: block;
+  overflow: hidden;
+  border-radius: 35px;
+  z-index: 10;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: black;
+    width: 350%;
+    height: 350%;
+    left: -120%;
+    top: -50%;
+    z-index: -1;
+    background: #1cb3b8;
+    background: linear-gradient(to left, #1cb3b8, #10ecf4, #10f4ac, #10f4ac);
+    transform: rotate(65deg);
+    transition: background 0.5s ease-out;
+  }
+  &:hover::before {
+    transform: rotate(65deg);
+    transition: background 0.5s ease-out;
+    background-position: -70px;
+  }
+  &:focus::before {
+    transform: rotate(65deg);
+    transition: background 0.5s ease-out;
+    background-position: -70px;
+  }
+}
+
+.main__button {
+  text-decoration: none;
+  display: block;
+  width: 70%;
+  height: auto;
+  padding: 6% 20%;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 20px;
+}
+
+.main__title {
+  font-family: 'Roboto';
+  margin-left: 10px;
+  position: relative;
+  display: inline-block;
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% + 10px);
+    height: 2px;
+    background: black;
+    bottom: 0;
+    left: 5px;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: calc(100% + 10px);
+    height: 1px;
+    background: black;
+    bottom: -2px;
+    right: -20px;;
+  }
+}
+
+.main__text {
+  font-family: 'Raleway';
+}
+
+@media (min-width: 414px) {
+  .main__text {
+    font-size: 19px;
+  }
+
+  .main__item--first::before,
+  .main__item--third::before {
+    left: -70px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main__item--first::before,
+  .main__item--third::before {
+    left: -135px;
+  }
+
+  .main__text {
+    width: 70%;
+  }
+
+    .main__item--second .main__title {
+      margin-left: 31%;
+    }
+
+  .main__item--second .main__text {
+    margin-right: 0;
+    margin-left: 30%;
+  }
+
+  .main__item::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 31%;
+    max-width: 250px;
+    height: 100%;
+    background: black;
+    top: 90px;
+  }
+
+  .main__item--first::after {
+    background: url('../img/pie1.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: -15px;
+    transform: rotate(-15deg);
+  }
+
+  .main__item--second::after {
+    background: url('../img/pie2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 10px;
+  }
+
+  .main__item--third::after {
+    background: url('../img/pie3.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: -10px;
+    transform: rotate(-15deg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    min-width: 1024px;
+    max-width: 1366px;
+    padding: 200px 1%;
+    margin: -200px auto;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    0px 1px 10px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         0px 1px 10px 0px rgba(50, 50, 50, 0.5);
+    &::after {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -100;
+      background: white;
+    }
+  }
+
+  .main__item--first,
+  .main__item--second {
+    width: 48%;
+  }
+
+  .main__item--first .main__text,
+  .main__item--second .main__text {
+    width: 70%;
+    font-size: 16px;
+  }
+
+  .main__item--third {
+    margin-bottom: 50px;
+    &::after {
+    right: 5%;
+    }
+    &::before {
+      right: -50px;
+    }
+  }
+
+  .main__item--fourth {
+    margin-bottom: 10px;
+  }
+}
